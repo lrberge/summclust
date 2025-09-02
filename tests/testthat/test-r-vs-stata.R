@@ -167,7 +167,7 @@ test_that("test against stata - leverage, fixef absorb", {
 
   feols_fit <- feols(ln_wage ~ union + race + msp |
                        grade + age + birth_yr + ind_code,
-                     data = df2)
+                     data = df2, fixef.rm = "none")
 
   lm_fit <- lm(
     ln_wage ~ union + race + msp + as.factor(grade) + as.factor(age) +
